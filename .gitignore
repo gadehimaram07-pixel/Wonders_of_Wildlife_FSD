@@ -1,0 +1,20 @@
+# Tomcat & Build outputs
+tomcat_base/
+*.class
+*.war
+*.jar
+target/
+build/
+out/
+
+# IDE & OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Database credentials or local config (if any)
+*.env
+db.properties
+

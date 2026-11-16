@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+    background: linear-gradient(to right, #f4f1e8, #e8e2d0);
+    color: #222;
+}
+
+.contact-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.contact-info {
+    width: 45%;
+    padding: 40px;
+    background: #2f4f2f;
+    color: white;
+}
+
+.contact-info h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #f1d76a;
+}
+
+.intro {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.info-box h3 {
+    font-size: 24px;
+    color: #f1d76a;
+    margin-bottom: 8px;
+}
+
+.info-box p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.contact-form-section {
+    width: 55%;
+    padding: 40px;
+}
+
+.contact-form-section h2 {
+    font-size: 38px;
+    color: #2f4f2f;
+    margin-bottom: 25px;
+    border-left: 8px solid #d4af37;
+    padding-left: 15px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 17px;
+    font-family: Georgia, serif;
+    outline: none;
+    box-sizing: border-box;
+}
+
+form input:focus,
+form textarea:focus {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 8px rgba(212,175,55,0.4);
+}
+
+form button {
+    background: linear-gradient(to right, #d4af37, #f1d76a);
+    color: #222;
+    border: none;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(to right, #2f4f2f, #4f7942);
+    color: white;
+    transform: scale(1.05);
+}
+
+#successMessage {
+    font-size: 18px;
+}

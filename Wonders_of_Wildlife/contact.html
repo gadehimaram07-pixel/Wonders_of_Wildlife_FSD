@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - Wildlife Adventure</title>
+    <link rel="stylesheet" href="contact.css">
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+            let successMessage = document.getElementById("successMessage");
+            if (name === "" || email === "" || subject === "" || message === "") {
+                alert("Please fill all the fields.");
+                return false;
+            }
+            let namePattern = /^[A-Za-z ]{3,30}$/;
+            if (!name.match(namePattern)) {
+                alert("Name should contain only letters and spaces (3 to 30 characters)");
+                return false;
+            }
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            successMessage.innerHTML = "Message Submitted Successfully!";
+            successMessage.style.color = "green";
+            successMessage.style.fontWeight = "bold";
+            successMessage.style.marginTop = "15px";
+            document.getElementById("contactForm").reset();
+            return false;
+        }
+        
+    </script>
+
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1>Contact Us</h1>
+            <p class="intro">
+            We'd love to hear from you! If you have any questions, feedback, or suggestions about our wildlife website, feel free to contact us.
+            </p>
+            <div class="info-box">
+            <h3>Email</h3>
+            <p>wildlifeadventure@gmail.com</p>
+            </div>
+            <div class="info-box">
+            <h3>Phone</h3>
+            <p>+91 99491 05106</p>
+            </div>
+            <div class="info-box">
+            <h3>Location</h3>
+            <p>India</p>
+            </div>
+            <div class="info-box">
+            <h3>Project</h3>
+            <p>Wonders of Wildlife & Wildlife Sanctuaries in India</p>
+            </div>
+        </div>
+        <div class="contact-form-section">
+            <form id="contactForm" onsubmit="return validateForm()">
+            <h2>Send a Message</h2>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="text" id="subject" placeholder="Enter subject" required>
+            <textarea id="message" rows="6" placeholder="Write your message here..." required></textarea>
+            <button type="submit">Submit</button>
+            <p id="successMessage"></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

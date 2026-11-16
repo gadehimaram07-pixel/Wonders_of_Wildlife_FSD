@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="style1.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Sign Up</title>
+
+  <style>
+    .signupbg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .signupbg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    body.signup {
+      font-family: "Cormorant", serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .signup-main {
+      width: 300px;
+      margin: 40px 40px;
+      padding: 50px;
+      background-color: yellowgreen;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .signup-main h1 {
+      color: darkgreen;
+      margin-bottom: 20px;
+    }
+
+    .signup-main input {
+      width: 90%;
+      padding: 8px;
+      margin: 10px 0;
+      color: black;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    .signup-btn {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cancel-btn {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .signup-btn:hover {
+      background-color: darkgreen;
+      transition: 0.7s;
+    }
+
+    .cancel-btn:hover {
+      background-color: lightgray;
+      transition: 0.7s;
+    }
+
+    a {
+      color: darkgreen;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    function validateSignup() {
+      var fname=document.getElementById("fname").value;
+      var uname = document.getElementById("uname").value;
+      var email = document.getElementById("email").value;
+      var pass = document.getElementById("pass").value;
+      var cpass = document.getElementById("cpass").value;
+      var fnamepat=/^[A-Z][a-zA-Z0-9]{6,}$/;
+      var namePattern = /^[a-zA-Z][a-zA-Z0-9]{7,}$/;
+      var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      var passPattern = /^[a-zA-Z0-9]{3,}$/;
+      if(!fnamepat.test(fname)){
+        alert("Invalid name! (Must have 8 characters starting with Uppercase)");
+        return false;
+      }
+      if (!namePattern.test(uname)) {
+        alert("Invalid Username! (Must contain at least 8 characters and start with a letter)");
+        return false;
+      }
+      if (!emailPattern.test(email)) {
+        alert("Invalid Email Address!");
+        return false;
+      }
+      if (!passPattern.test(pass)) {
+        alert("Invalid Password! (Must contain at least 3 characters)");
+        return false;
+      }
+      if (pass !== cpass) {
+        alert("Passwords do not match!");
+        return false;
+      }
+      alert("Signup Successful! Now login with your account.");
+      return true;
+    }
+  </script>
+</head>
+<body class="signup">
+  <div class="signupbg">
+    <video autoplay loop muted playsinline>
+      <source src="loginbg.mp4" type="video/mp4">
+    </video>
+  </div>
+  <form class="signup-main" onsubmit="return validateSignup()" action="login.html">
+    <h1>Wonders of Wildlife - Sign Up</h1>
+    Enter FullName: <input type="text" id="fname" placeholder="Enter FullName" required>
+    Enter Username: <input type="text" id="uname" placeholder="Enter Username" required>
+    Enter Email: <input type="email" id="email" placeholder="Enter Email" required>
+    Enter Password: <input type="password" id="pass" placeholder="Enter Password" required>
+    Confirm Password: <input type="password" id="cpass" placeholder="Confirm Password" required>
+    <button type="submit" class="signup-btn">Sign Up</button>
+    <button type="reset" class="cancel-btn">Cancel</button><br><br>
+    Already have an account? <a href="login.html">Login</a>
+  </form>
+</body>
+</html>
